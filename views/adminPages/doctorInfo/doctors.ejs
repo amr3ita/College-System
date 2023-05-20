@@ -1,0 +1,41 @@
+<h1 class="text-center bg-dark text-warning my-3 p-4 
+rounded w-50 mx-auto">All Doctors</h1>
+
+<div class="events-list my-5 text-center">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Doctor Code</th>
+                <th>Doctor Email</th>
+                <th>Subject Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <% if(doctor.length> 0){%>
+            <tbody>
+                <%for(let doc of doctor){%>
+                    <tr>
+                        <th>
+                            <%= doc.Doc_name%>
+                        </th>
+                        <th>
+                            <%= doc.Doc_code%>
+                        </th>
+                        <th>
+                            <%= doc.Doc_email%>
+                        </th>
+                        <th>
+                            <%= doc.SUB_name%>
+                        </th>
+
+                        <th>
+                            <a href="/admin/<%= doc.id%>/editDocInfo" class="mx-1 btn btn-outline-success">update</a>
+                            <a href="/admin/<%= doc.id%>/deleteDocInfo" class="mx-1 btn btn-outline-danger">delete</a>
+                        </th>
+                    </tr>
+                    <%}%>
+            </tbody>
+            <%}%>
+    </table>
+</div>

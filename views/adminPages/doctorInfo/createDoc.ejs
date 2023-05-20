@@ -1,0 +1,36 @@
+<h1 class="text-center bg-dark text-warning my-3 p-4 rounded w-50 mx-auto">
+    Add Doctor</h1>
+
+<section class="form-section my-4">
+    <div class="container">
+        <div class="row mx-auto">
+            <div class="col-sm-9">
+                <form action="" method="post">
+                    <div class="form-group my-2">
+                        <label for="Doc_name">Doctor Name</label>
+                        <input type="text" class="form-control" name="Doc_name" id="Doc_name">
+                    </div>
+                    <div class="form-group my-2">
+                        <label for="Doc_password">Doctor Password</label>
+                        <input type="password" class="form-control" id="Doc_password" name="Doc_password">
+                    </div>
+
+                    <div class="form-group my-2">
+                        <label for="SUB_name">Subject Name</label>
+                        <select class="form-select" name="SUB_name" id="SUB_name" aria-label="Default select example">
+                            <% if(subject.length> 0){%>
+                                <%for(let sub of subject){%>
+                                    <option value="<%= sub.SUB_name%>">
+                                        <%= sub.SUB_name%>
+                                    </option>
+                                    <%}%>
+                                        <%}%>
+                        </select>
+                    </div>
+
+                    <input type="submit" value="Add Department" class="btn btn-outline-primary mt-2">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

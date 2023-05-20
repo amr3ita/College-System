@@ -1,0 +1,51 @@
+<h1 class="text-center bg-dark text-warning my-3 p-4 rounded w-50 mx-auto">
+    Add Subject</h1>
+
+<section class="form-section my-4">
+    <div class="container">
+        <div class="row mx-auto">
+            <div class="col-sm-9">
+                <form action="" method="post">
+                    <div class="form-group my-2">
+                        <label for="SUB_name">Subject Name</label>
+                        <input type="text" class="form-control" name="SUB_name" id="SUB_name">
+                    </div>
+                    <div class="form-group my-2">
+                        <label for="DB_code">Subject Code</label>
+                        <input type="text" class="form-control" id="SUB_code" name="SUB_code">
+                    </div>
+
+                    <div class="form-group my-2">
+                        <label for="DB_name">Department Name</label>
+                        <select class="form-select" name="DB_name" id="DB_name" aria-label="Default select example">
+                            <% if(department.length> 0){%>
+                                <%for(let dept of department){%>
+                                    <option value="<%= dept.DP_name%>">
+                                        <%= dept.DP_name%>
+                                    </option>
+                                    <%}%>
+                                        <%}%>
+                        </select>
+                    </div>
+                    <div class="form-group my-2">
+                        <label for="Pre_Req">Prerequirement Subject</label>
+                        <select class="form-select" name="Pre_Req" id="Pre_Req" aria-label="Default select example">
+                            <% if(subject.length> 0){%>
+                                <%for(let pre of subject){%>
+                                    <option value="<%= pre.SUB_name%>">
+                                        <%= pre.SUB_name%>
+                                    </option>
+                                    <%}%>
+                                        <%}%>
+                                            <option value="Null">
+                                                Null
+                                            </option>
+                        </select>
+                    </div>
+
+                    <input type="submit" value="Add Department" class="btn btn-outline-primary mt-2">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

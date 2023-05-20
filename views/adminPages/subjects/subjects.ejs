@@ -1,0 +1,41 @@
+<h1 class="text-center bg-dark text-warning my-3 p-4 
+rounded w-50 mx-auto">All Subjects</h1>
+
+<div class="events-list my-5 text-center">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Subject Name</th>
+                <th>Subject Code</th>
+                <th>Department Name</th>
+                <th>Prerequirement Subject</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <% if(subjects.length> 0){%>
+            <tbody>
+                <%for(let sub of subjects){%>
+                    <tr>
+                        <th>
+                            <%= sub.SUB_name%>
+                        </th>
+                        <th>
+                            <%= sub.SUB_code%>
+                        </th>
+                        <th>
+                            <%= sub.DB_name%>
+                        </th>
+                        <th>
+                            <%= sub.Pre_Req%>
+                        </th>
+
+                        <th>
+                            <a href="/admin/<%= sub.id%>/editSub" class="mx-1 btn btn-outline-success">update</a>
+                            <a href="/admin/<%= sub.id%>/deleteSub" class="mx-1 btn btn-outline-danger">delete</a>
+                        </th>
+                    </tr>
+                    <%}%>
+            </tbody>
+            <%}%>
+    </table>
+</div>
